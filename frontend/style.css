@@ -357,3 +357,401 @@ body{
     background:#dc2626;
 
 }
+/* ===================================
+   QR PREVIEW
+=================================== */
+
+.preview-card{
+
+    min-height:600px;
+
+}
+
+#result{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-direction:column;
+
+    min-height:450px;
+
+}
+
+.placeholder{
+
+    text-align:center;
+
+    color:#94a3b8;
+
+}
+
+.placeholder h3{
+
+    margin-bottom:10px;
+
+    font-size:24px;
+
+}
+
+.placeholder p{
+
+    font-size:15px;
+
+}
+
+/* ===================================
+   QR CARD
+=================================== */
+
+.qr-card{
+
+    width:100%;
+
+    text-align:center;
+
+    animation:fadeIn .5s ease;
+
+}
+
+.success{
+
+    background:#dcfce7;
+
+    color:#15803d;
+
+    padding:12px;
+
+    border-radius:10px;
+
+    margin-bottom:20px;
+
+    font-weight:600;
+
+}
+
+.qr-card img{
+
+    width:250px;
+
+    background:white;
+
+    padding:15px;
+
+    border-radius:15px;
+
+    border:1px solid #e5e7eb;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+}
+
+.qr-card img:hover{
+
+    transform:scale(1.05);
+
+}
+
+.details{
+
+    margin-top:25px;
+
+    text-align:left;
+
+    background:#f8fafc;
+
+    padding:15px;
+
+    border-radius:12px;
+
+}
+
+.details p{
+
+    margin:10px 0;
+
+    color:#374151;
+
+    word-break:break-word;
+
+}
+
+/* ===================================
+   QR BUTTONS
+=================================== */
+
+.qr-buttons{
+
+    display:flex;
+
+    gap:12px;
+
+    margin-top:25px;
+
+}
+
+.qr-buttons a,
+.qr-buttons button{
+
+    flex:1;
+
+    border:none;
+
+    background:#2563eb;
+
+    color:white;
+
+    padding:14px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    text-decoration:none;
+
+    font-size:15px;
+
+    transition:.3s;
+
+}
+
+.qr-buttons a:hover,
+.qr-buttons button:hover{
+
+    background:#1d4ed8;
+
+    transform:translateY(-2px);
+
+}
+
+/* ===================================
+   CUSTOM SCROLLBAR
+=================================== */
+
+::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#3b82f6;
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#e5e7eb;
+
+}
+
+/* ===================================
+   ANIMATION
+=================================== */
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(30px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ===================================
+   RESPONSIVE
+=================================== */
+
+@media(max-width:1200px){
+
+    .dashboard{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+@media(max-width:900px){
+
+    .sidebar{
+
+        width:80px;
+
+        padding:20px 10px;
+
+    }
+
+    .logo h2{
+
+        font-size:18px;
+
+    }
+
+    .logo p{
+
+        display:none;
+
+    }
+
+    .sidebar nav a{
+
+        text-align:center;
+
+        padding:15px 10px;
+
+        font-size:14px;
+
+    }
+
+    .main{
+
+        margin-left:80px;
+
+        width:calc(100% - 80px);
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    body{
+
+        display:block;
+
+    }
+
+    .sidebar{
+
+        display:none;
+
+    }
+
+    .main{
+
+        width:100%;
+
+        margin-left:0;
+
+        padding:20px;
+
+    }
+
+    .topbar{
+
+        flex-direction:column;
+
+        gap:15px;
+
+        text-align:center;
+
+    }
+
+    .row{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .button-group{
+
+        flex-direction:column;
+
+    }
+
+    .qr-buttons{
+
+        flex-direction:column;
+
+    }
+
+    .generator-card,
+    .preview-card{
+
+        padding:20px;
+
+    }
+
+}
+
+@media(max-width:500px){
+
+    .topbar h1{
+
+        font-size:22px;
+
+    }
+
+    .generator-card h2,
+    .preview-card h2{
+
+        font-size:20px;
+
+    }
+
+    .qr-card img{
+
+        width:200px;
+
+    }
+
+}
+#reader{
+
+    width:400px;
+
+    margin:auto;
+
+}
+
+#scanResult{
+
+    margin-top:20px;
+
+    padding:20px;
+
+    background:#f8fafc;
+
+    border-radius:12px;
+
+    text-align:center;
+
+}
+
+#scanResult a{
+
+    display:inline-block;
+
+    margin-top:15px;
+
+    background:#2563eb;
+
+    color:white;
+
+    padding:10px 18px;
+
+    border-radius:8px;
+
+    text-decoration:none;
+
+}

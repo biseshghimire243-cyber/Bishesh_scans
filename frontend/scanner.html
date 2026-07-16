@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>QR Scanner</title>
+
+<link rel="stylesheet" href="style.css">
+
+<script src="https://unpkg.com/html5-qrcode"></script>
+
+</head>
+
+<body>
+
+<div class="sidebar">
+
+    <div class="logo">
+        <h2>QR Studio</h2>
+        <p>QR Management</p>
+    </div>
+
+    <nav>
+
+        <a href="index.html">
+            🏠 Dashboard
+        </a>
+
+        <a href="history.html">
+            📜 History
+        </a>
+
+        <a href="scanner.html" class="active">
+            📷 QR Scanner
+        </a>
+
+    </nav>
+
+</div>
+
+<div class="main">
+
+    <div class="generator-card">
+
+        <h2>QR Scanner</h2>
+
+        <div id="reader"></div>
+
+        <br>
+
+        <div id="scanResult">
+
+            No QR scanned.
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="scanner.js"></script>
+
+</body>
+</html>
