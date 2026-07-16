@@ -3,45 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QR Code Generator</title>
+    <title>QR Studio</title>
 
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
+<div class="sidebar">
+
+    <div class="logo">
+        <h2>QR Studio</h2>
+    </div>
+
+    <ul>
+        <li class="active">
+            <a href="index.html">🏠 Dashboard</a>
+        </li>
+
+        <li>
+            <a href="history.html">📜 History</a>
+        </li>
+
+        <li>
+            <a href="#">⚙ Settings</a>
+        </li>
+
+        <li>
+            <a href="#">ℹ About</a>
+        </li>
+    </ul>
+
+</div>
+
+<div class="main">
+
     <div class="container">
 
-        <h1>⚡ QR Code Generator</h1>
-        <p>Create beautiful QR codes in seconds.</p>
+        <h1>QR Code Generator</h1>
 
-        <!-- Input -->
-        <div class="input-box">
-            <input
-                type="text"
-                id="text"
-                placeholder="Enter Website URL or Text">
-        </div>
+        <p>Create QR Codes instantly.</p>
 
-        <!-- Settings -->
-        <div class="settings">
+        <input
+            type="text"
+            id="text"
+            placeholder="Enter URL or Text">
 
-            <div class="setting">
-                <label for="size">QR Size</label>
+        <div class="options">
+
+            <div>
+                <label>QR Size</label>
 
                 <select id="size">
-                    <option value="150">150 × 150</option>
-                    <option value="200" selected>200 × 200</option>
-                    <option value="250">250 × 250</option>
-                    <option value="300">300 × 300</option>
+                    <option value="150">150 x 150</option>
+                    <option value="200" selected>200 x 200</option>
+                    <option value="250">250 x 250</option>
+                    <option value="300">300 x 300</option>
                 </select>
             </div>
 
-            <div class="setting">
-                <label for="color">QR Color</label>
+            <div>
+                <label>QR Color</label>
 
                 <input
                     type="color"
@@ -51,7 +74,6 @@
 
         </div>
 
-        <!-- Buttons -->
         <div class="buttons">
 
             <button id="generateBtn">
@@ -64,10 +86,8 @@
 
         </div>
 
-        <!-- QR Result -->
         <div id="result"></div>
 
-        <!-- Action Buttons -->
         <div class="actions">
 
             <button id="copyBtn">
@@ -76,20 +96,11 @@
 
         </div>
 
-        <!-- History -->
-        <div class="history">
-
-            <h3>Recent History</h3>
-
-            <ul id="historyList">
-
-            </ul>
-
-        </div>
-
     </div>
 
-    <script src="script.js"></script>
+</div>
+
+<script src="script.js"></script>
 
 </body>
 </html>

@@ -1,0 +1,48 @@
+.history-table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:20px;
+}
+
+.history-table th,
+.history-table td{
+    border:1px solid #ddd;
+    padding:12px;
+    text-align:left;
+}
+
+.history-table th{
+    background:#2563eb;
+    color:white;
+}
+
+.history-table tr:nth-child(even){
+    background:#f8fafc;
+}
+
+.history-table button{
+    background:#2563eb;
+    color:white;
+    border:none;
+    padding:8px 15px;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+.history-table button:hover{
+    background:#1d4ed8;
+}
+
+#clearHistory{
+    width:100%;
+    padding:12px;
+    background:#ef4444;
+    color:white;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+#clearHistory:hover{
+    background:#dc2626;
+}

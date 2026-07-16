@@ -1,3 +1,11 @@
+const selected = localStorage.getItem("selectedQR");
+
+if(selected){
+
+    document.getElementById("text").value = selected;
+
+    localStorage.removeItem("selectedQR");
+}
 const button = document.getElementById("generateBtn");
 
 button.addEventListener("click", generateQR);
@@ -40,3 +48,16 @@ async function generateQR() {
         `;
     }
 }
+let history = JSON.parse(localStorage.getItem("qrHistory")) || [];
+
+history.unshift({
+
+    text:text,
+
+    date:new Date().toLocaleString()
+
+});
+
+history = history.slice(0,20);
+
+localStorage.setItem("qrHistory",JSON.stringify(history));

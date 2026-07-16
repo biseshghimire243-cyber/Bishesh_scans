@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR History</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="sidebar">
+
+    <div class="logo">
+        <h2>QR Studio</h2>
+    </div>
+
+    <ul>
+        <li>
+            <a href="index.html">🏠 Dashboard</a>
+        </li>
+
+        <li class="active">
+            <a href="history.html">📜 History</a>
+        </li>
+    </ul>
+
+</div>
+
+<div class="main">
+
+    <div class="container">
+
+        <h1>QR History</h1>
+
+        <table class="history-table">
+
+            <thead>
+
+                <tr>
+                    <th>Text / URL</th>
+                    <th>Date</th>
+                    <th>Action</th>
+                </tr>
+
+            </thead>
+
+            <tbody id="historyBody">
+
+            </tbody>
+
+        </table>
+
+        <br>
+
+        <button id="clearHistory">
+            🗑 Clear History
+        </button>
+
+    </div>
+
+</div>
+
+<script src="history.js"></script>
+
+</body>
+</html>
