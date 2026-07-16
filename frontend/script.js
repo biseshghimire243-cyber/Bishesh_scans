@@ -62,20 +62,73 @@ async function generateQR(){
 
     if(data.success){
 
-        document.getElementById("result").innerHTML=`
+        document.getElementById("result").innerHTML = `
 
-            <img src="${data.qr}">
+<div class="qr-card">
 
-            <br><br>
+    <div class="success">
+        ✅ QR Generated Successfully
+    </div>
 
-            <a href="${data.qr}" download="QRCode.png" class="download-btn">
+    <img src="${data.qr}" id="qrImage">
 
-                Download QR
+    <div class="details">
 
-            </a>
+        <p><strong>Type :</strong> ${type.toUpperCase()}</p>
 
-        `;
+        <p><strong>Content :</strong> ${text}</p>
 
+        <p><strong>Generated :</strong> ${new Date().toLocaleString()}</p>
+
+    </div>
+
+    <div class="qr-buttons">
+
+        <a href="${data.qr}" download="QRCode.png">
+            📥 Download
+        </a>
+
+        <button id="copyBtn">
+            📋 Copy
+        </button>
+
+        <button id="shareBtn">
+            📤 Share
+        </button>
+
+    </div>
+
+</div>
+
+`;
+
+document.getElementById("copyBtn").onclick = () => {
+
+    navigator.clipboard.writeText(text);
+
+    alert("Copied Successfully!");
+
+};
+
+document.getElementById("shareBtn").onclick = async () => {
+
+    if (navigator.share) {
+
+        await navigator.share({
+
+            title: "QR Code",
+
+            text: text
+
+        });
+
+    } else {
+
+        alert("Share is not supported on this browser.");
+
+    }
+
+};
         let history = JSON.parse(localStorage.getItem("qrHistory")) || [];
 
         history.unshift({
