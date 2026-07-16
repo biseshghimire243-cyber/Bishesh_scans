@@ -755,3 +755,66 @@ body{
     text-decoration:none;
 
 }
+.scan-card{
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:15px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.1);
+
+    text-align:center;
+
+    animation:fadeIn .5s;
+
+}
+
+.scan-card h2{
+
+    color:#16a34a;
+
+    margin-bottom:15px;
+
+}
+
+.scan-card p{
+
+    margin:20px 0;
+
+    word-break:break-word;
+
+    font-size:17px;
+
+}
+
+.action-btn{
+
+    display:inline-block;
+
+    margin-top:15px;
+
+    padding:12px 25px;
+
+    background:#2563eb;
+
+    color:white;
+
+    text-decoration:none;
+
+    border:none;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.action-btn:hover{
+
+    background:#1d4ed8;
+
+}
