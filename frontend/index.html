@@ -1,136 +1,202 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
     <title>QR Studio</title>
 
     <link rel="stylesheet" href="style.css">
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
 </head>
+
 <body>
 
-<div class="sidebar">
+    <!-- Sidebar -->
 
-    <div class="logo">
-        <h2>QR Studio</h2>
-    </div>
+    <aside class="sidebar">
 
-    <ul>
-        <li class="active">
-            <a href="index.html">🏠 Dashboard</a>
-        </li>
+        <div class="logo">
 
-        <li>
-            <a href="history.html">📜 History</a>
-        </li>
+            <h2>QR Studio</h2>
 
-        <li>
-            <a href="#">⚙ Settings</a>
-        </li>
+            <p>QR Management</p>
 
-        <li>
-            <a href="#">ℹ About</a>
-        </li>
-    </ul>
+        </div>
 
-</div>
+        <nav>
 
-<div class="main">
+            <a href="index.html" class="active">
+                🏠 Dashboard
+            </a>
 
-    <div class="container">
+            <a href="history.html">
+                📜 History
+            </a>
 
-        <h1>QR Code Generator</h1>
+            <a href="#">
+                ⚙ Settings
+            </a>
 
-        <p>Create QR Codes instantly.</p>
+            <a href="#">
+                ℹ About
+            </a>
 
-        <input
-            type="text"
-            id="text"
-            placeholder="Enter URL or Text">
+        </nav>
 
-        <div class="options">
+    </aside>
+
+    <!-- Main -->
+
+    <main class="main">
+
+        <!-- Top Bar -->
+
+        <header class="topbar">
 
             <div>
-                <label>QR Size</label>
 
-                <select id="size">
-                    <option value="150">150 x 150</option>
-                    <option value="200" selected>200 x 200</option>
-                    <option value="250">250 x 250</option>
-                    <option value="300">300 x 300</option>
-                </select>
+                <h1>Dashboard</h1>
+
+                <span>Create and manage QR Codes</span>
+
             </div>
 
-            <div>
-                <label>QR Color</label>
+            <div class="profile">
 
-                <input
-                    type="color"
-                    id="color"
-                    value="#000000">
+                👤 Admin
+
             </div>
 
-        </div>
+        </header>
 
-        <div class="buttons">
+        <!-- Grid -->
 
-            <button id="generateBtn">
-                🚀 Generate
-            </button>
+        <section class="dashboard">
 
-            <button id="clearBtn">
-                🗑 Clear
-            </button>
+            <!-- Left -->
 
-        </div>
+            <div class="generator-card">
 
-        <div id="result"></div>
+                <h2>Create QR Code</h2>
 
-        <div class="actions">
+                <div class="form-group">
 
-            <button id="copyBtn">
-                📋 Copy Text
-            </button>
+                    <label>Text / URL</label>
 
-        </div>
+                    <input
+                        type="text"
+                        id="text"
+                        placeholder="https://example.com">
 
-    </div>
+                </div>
 
-</div>
-<div class="input-group">
+                <div class="row">
 
-    <label>QR Type</label>
+                    <div class="form-group">
 
-    <select id="qrType">
+                        <label>QR Type</label>
 
-        <option value="text">📝 Text</option>
+                        <select id="qrType">
 
-        <option value="url">🌐 Website</option>
+                            <option value="text">Text</option>
 
-        <option value="email">📧 Email</option>
+                            <option value="url">Website</option>
 
-        <option value="phone">📞 Phone</option>
+                            <option value="email">Email</option>
 
-        <option value="sms">💬 SMS</option>
+                            <option value="phone">Phone</option>
 
-    </select>
+                            <option value="sms">SMS</option>
 
-</div>
+                        </select>
 
-<div class="input-group">
+                    </div>
 
-    <label>Enter Value</label>
+                    <div class="form-group">
 
-    <input
-        type="text"
-        id="text"
-        placeholder="Enter Text or URL">
+                        <label>QR Size</label>
 
-</div>
+                        <select id="size">
 
-<script src="script.js"></script>
+                            <option value="150">150</option>
+
+                            <option value="200" selected>200</option>
+
+                            <option value="250">250</option>
+
+                            <option value="300">300</option>
+
+                        </select>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label>Color</label>
+
+                        <input
+                            type="color"
+                            id="color"
+                            value="#000000">
+
+                    </div>
+
+                </div>
+
+                <div class="button-group">
+
+                    <button id="generateBtn">
+
+                        🚀 Generate
+
+                    </button>
+
+                    <button id="clearBtn">
+
+                        🗑 Clear
+
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- Right -->
+
+            <div class="preview-card">
+
+                <h2>QR Preview</h2>
+
+                <div id="result">
+
+                    <div class="placeholder">
+
+                        <h3>No QR Generated</h3>
+
+                        <p>Your QR Code will appear here.</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
 
 </body>
+
 </html>
+```
