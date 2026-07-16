@@ -54,6 +54,15 @@ button{
 button:hover{
     background:#4338ca;
 }
+.buttons{
+    display: flex;
+    gap: 15px;      /* Space between buttons */
+    margin-top: 20px;
+}
+
+.buttons button{
+    flex: 1;        /* Makes both buttons equal width */
+}
 
 #result{
     margin-top:25px;
