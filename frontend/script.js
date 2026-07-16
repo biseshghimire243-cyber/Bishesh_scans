@@ -10,43 +10,88 @@ const button = document.getElementById("generateBtn");
 
 button.addEventListener("click", generateQR);
 
-async function generateQR() {
+async function generateQR(){
 
-    const text = document.getElementById("text").value.trim();
+    const type = document.getElementById("qrType").value;
 
-    if (text === "") {
-        alert("Please enter text or URL.");
+    let text = document.getElementById("text").value.trim();
+
+    if(text===""){
+        alert("Please enter a value.");
         return;
     }
 
-    const response = await fetch("/generate", {
+    switch(type){
 
-        method: "POST",
+        case "email":
+            text = "mailto:" + text;
+            break;
 
-        headers: {
-            "Content-Type": "application/json"
+        case "phone":
+            text = "tel:" + text;
+            break;
+
+        case "sms":
+            text = "sms:" + text;
+            break;
+
+        case "url":
+
+            if(!text.startsWith("http://") && !text.startsWith("https://")){
+                text = "https://" + text;
+            }
+
+            break;
+    }
+
+    const response = await fetch("/generate",{
+
+        method:"POST",
+
+        headers:{
+            "Content-Type":"application/json"
         },
 
-        body: JSON.stringify({
-            text: text
+        body:JSON.stringify({
+            text
         })
 
     });
 
     const data = await response.json();
 
-    if (data.success) {
+    if(data.success){
 
-        document.getElementById("result").innerHTML = `
-            <img src="${data.qr}" alt="QR Code">
+        document.getElementById("result").innerHTML=`
+
+            <img src="${data.qr}">
 
             <br><br>
 
             <a href="${data.qr}" download="QRCode.png" class="download-btn">
+
                 Download QR
+
             </a>
+
         `;
+
+        let history = JSON.parse(localStorage.getItem("qrHistory")) || [];
+
+        history.unshift({
+
+            text,
+
+            date:new Date().toLocaleString()
+
+        });
+
+        history = history.slice(0,20);
+
+        localStorage.setItem("qrHistory",JSON.stringify(history));
+
     }
+
 }
 let history = JSON.parse(localStorage.getItem("qrHistory")) || [];
 
