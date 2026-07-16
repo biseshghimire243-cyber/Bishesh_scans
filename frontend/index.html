@@ -5,25 +5,87 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QR Code Generator</title>
 
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <div class="container">
 
-        <h1>QR Code Generator</h1>
-        <p>Create QR codes instantly.</p>
+        <h1>⚡ QR Code Generator</h1>
+        <p>Create beautiful QR codes in seconds.</p>
 
-        <input
-            type="text"
-            id="text"
-            placeholder="Enter text or URL">
+        <!-- Input -->
+        <div class="input-box">
+            <input
+                type="text"
+                id="text"
+                placeholder="Enter Website URL or Text">
+        </div>
 
-        <button id="generateBtn">
-            Generate QR
-        </button>
+        <!-- Settings -->
+        <div class="settings">
 
+            <div class="setting">
+                <label for="size">QR Size</label>
+
+                <select id="size">
+                    <option value="150">150 × 150</option>
+                    <option value="200" selected>200 × 200</option>
+                    <option value="250">250 × 250</option>
+                    <option value="300">300 × 300</option>
+                </select>
+            </div>
+
+            <div class="setting">
+                <label for="color">QR Color</label>
+
+                <input
+                    type="color"
+                    id="color"
+                    value="#000000">
+            </div>
+
+        </div>
+
+        <!-- Buttons -->
+        <div class="buttons">
+
+            <button id="generateBtn">
+                🚀 Generate
+            </button>
+
+            <button id="clearBtn">
+                🗑 Clear
+            </button>
+
+        </div>
+
+        <!-- QR Result -->
         <div id="result"></div>
+
+        <!-- Action Buttons -->
+        <div class="actions">
+
+            <button id="copyBtn">
+                📋 Copy Text
+            </button>
+
+        </div>
+
+        <!-- History -->
+        <div class="history">
+
+            <h3>Recent History</h3>
+
+            <ul id="historyList">
+
+            </ul>
+
+        </div>
 
     </div>
 
